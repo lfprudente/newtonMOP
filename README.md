@@ -1,9 +1,12 @@
-This directory contains the Newton and Newton-Gradient methods with safeguards for solving multiobjective optimization problems, described in
+This directory contains algorithms for solving multiobjective optimization problems, described in
 
 M. L. N. Gonçalves, F. S. Lima, and L. F. Prudente, Globally convergent Newton-type methods for multiobjective optimization, technical report, 2022.
 
-Date: June 2022
-License: This code is released under the GNU General Public License
+- MOPsolverNewton.f90: routine containing the Newton algorithm with safeguards
+- MOPsolverNG.f90: routine containing the Newton-Gradient algorithm with safeguards
+- MOPsolverNewtonWoSafeg.f90: routine containing the Newton algorithm without safeguards
+- MOPsolverSD.f90: routine containing the steepest descent algorithm
+- MOPsolverNewtonScalar.f90: routine containing the Scalarized Newton algorithm with safeguards
 
 This folder also contains the third-party free codes: 
 1) software Algencan 3.1.1;
@@ -19,23 +22,27 @@ This folder also contains the third-party free codes:
 File main.f90 contains the main program. Modify myproblem.f90 routine to solve your own problem. Alternatively, set a test problem in main.f90 routine - see myproblem.f90.
 
 Instructions:
-—————————————
+-------------
+
+File main.f90 contains the main program where you can choose the algorithm to be used.
+Modify myproblem.f90 routine to solve your own problem. Alternatively, set a test problem in main.f90 routine; see myproblem.f90.
 
 The codes are written in Fortran 90. Users need to install gfortran.
 
-1) Go to folder and type 
+1) In the terminal, go to the folder and type:
 
-make
+    make
 
-2) Run typing
+2) Run typing:
 
-./MOPsolver
+    ./MOPsolver
 
 and see the output in the screen.
 
-out    : outer iteration number
-|theta|: optimality measure 
-LS     : flag of the line search routine to compute the step size
-IS     : flag of the inner solver routine to compute the search direction
-#evalf : number of function evaluations
-#evalg : number of gradient evaluations
+- out: outer iteration number
+- |theta|: optimality measure 
+- LS: flag of the line search routine to compute the step size (0 means success)
+- IS: flag of the inner solver routine to compute the search direction (0 means success)
+- #evalf: number of function evaluations
+- #evalg: number of gradient evaluations
+
