@@ -1,6 +1,6 @@
 This directory contains algorithms for solving multiobjective optimization problems, described in
 
-M. L. N. Gonçalves, F. S. Lima, and L. F. Prudente, Globally convergent Newton-type methods for multiobjective optimization, technical report, 2022.
+M. L. N. Gonçalves, F. S. Lima, and L. F. Prudente, Globally convergent Newton-type methods for multiobjective optimization, Computational Optimization and Applications 83(2), pp. 403-434, 2022. 
 
 - MOPsolverNewton.f90: routine containing the Newton algorithm with safeguards
 - MOPsolverNG.f90: routine containing the Newton-Gradient algorithm with safeguards
